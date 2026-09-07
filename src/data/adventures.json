@@ -1,0 +1,37 @@
+[
+  {
+    "image": "/photos/snorkel.jpg",
+    "alt": "Holding a catch beside the sea",
+    "title": "By the Sea",
+    "description": "A bright day by the water, with the snorkel ready and the shoreline full of surprises. Some of the best adventures end with a story and a memorable catch.",
+    "layout": "feature"
+  },
+  {
+    "image": "/photos/thaicooking.jpg",
+    "alt": "Thai cooking class",
+    "title": "Learning Thai Flavors",
+    "description": "A hands-on cooking class turned lunch into part of the journey. Fresh ingredients, bright colors, and new techniques made the kitchen feel like another kind of adventure.",
+    "layout": "tall"
+  },
+  {
+    "image": "/photos/camel.jpg",
+    "alt": "Meeting a camel",
+    "title": "Unexpected Encounters",
+    "description": "Travel has a way of putting you face to face with something completely unexpected. This close-up camel encounter was impossible to forget.",
+    "layout": "standard"
+  },
+  {
+    "image": "/photos/scooterindia.jpg",
+    "alt": "Riding a scooter through the hills",
+    "title": "Open Roads",
+    "description": "With a scooter, a winding road, and green hills ahead, the route becomes part of the destination. Every turn brought a little more freedom and a new view.",
+    "layout": "wide"
+  },
+  {
+    "image": "/photos/horse.jpg",
+    "alt": "Visiting a horse at a stable",
+    "title": "Quiet Company",
+    "description": "A calm moment at the stable, sharing space with a gentle horse. Not every travel memory needs a grand backdrop; sometimes a curious hello is enough.",
+    "layout": "standard"
+  }
+]
