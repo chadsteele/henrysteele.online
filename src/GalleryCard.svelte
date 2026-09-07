@@ -3,9 +3,12 @@
   export let index = 0;
 
   let muted = true;
+
+  $: descriptionLink = adventure.description.match(/<a\b[^>]*href=['"]([^'"]+)['"][^>]*>(.*?)<\/a>/i);
+  $: descriptionMarkup = adventure.description.replace(/<a\b[^>]*href=['"][^'"]+['"][^>]*>(.*?)<\/a>/i, '$1');
 </script>
 
-<article class:has-video={adventure.video} class="gallery-item" style={`--delay: ${index * 90}ms`}>
+<article class:has-video={adventure.video} class:has-link={descriptionLink} class="gallery-item" style={`--delay: ${index * 90}ms`}>
   <div class="gallery-image">
     {#if adventure.video}
       <video
@@ -31,8 +34,17 @@
     <div class="image-wash"></div>
   </div>
   <div class="gallery-description">
-    <h2>{adventure.title}</h2>
-    <p>{@html adventure.description}</p>
+    <h2>{@html adventure.title}</h2>
+    {#if descriptionLink}
+      <a
+        class="description-link"
+        href={descriptionLink[1]}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`Open link for ${adventure.title}`}
+      ></a>
+    {/if}
+    <p>{@html descriptionMarkup}</p>
   </div>
 </article>
 
@@ -80,6 +92,9 @@
   .gallery-item:hover .gallery-image img,
   .gallery-item:hover .gallery-image video { transform: scale(1.06); }
 
+  .gallery-item.has-link:hover .gallery-image img,
+  .gallery-item.has-link:hover .gallery-image video { transform: none; }
+
   .image-wash {
     position: absolute;
     inset: 0;
@@ -124,7 +139,22 @@
     left: 0;
     z-index: 1;
     padding: 30px;
+    background: linear-gradient(0deg, rgba(36, 33, 51, 0.96), rgba(36, 33, 51, 0.5), transparent);
+  }
+
+  .description-link {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
     background: linear-gradient(0deg, rgba(36, 33, 51, 0.96), rgba(36, 33, 51, 0.72), transparent);
+  }
+
+  .gallery-description h2,
+  .gallery-description p {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
   }
 
   .gallery-description h2 {
