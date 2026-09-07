@@ -4,19 +4,34 @@
     "title": "Save the Reef, Mauritius",
     "description": "The lagoon in Mauritius is a vibrant ecosystem, but it’s also fragile. These are bags of trash, not fish.  I try to leave every place I visit a little better than I found it.  The ocean needs our help, and I’m happy to do my part."
   },
-  {
+    {
     "image": "/photos/horse.jpg",
     "title": "Giddy up",
     "description": "I love horses.  I have been riding since I was a child, and I have volunteered with animals in America, Mauritius and now Japan."
-  },
-  {
-    "image": "/photos/thaicooking.jpg",
-    "title": "I love cooking food from around the world",
-    "description": "I love this culinary school in Thailand. Thai food is vibrant and full of flavor. Fresh ingredients, bright colors, and new techniques make me a better cook."
-  },
+  }
+  ,
   {
     "image": "/photos/scooterindia.jpg",
     "title": "India and Nepal",
     "description": "I spent a month in the Himalayas learning mountaineering at the Himalayan Mountaineering Institute in Darjeeling, India.  I also went bungee jumping and paragliding in Pokhara, Nepal."
+  }
+  ,
+  {
+    "image": "/photos/thaicooking.jpg",
+    "title": "I love cooking food from around the world",
+    "description": "I love this culinary school in Thailand. Thai food is vibrant and full of flavor. Fresh ingredients, bright colors, and new techniques make me a better cook."
+  }
+  ,
+
+  
+  {
+    "video": "/photos/fightlab.mp4",
+    "title": "Bangkok Fight Lab, Thailand",
+    "description": "I trained in Muay Thai at the Bangkok Fight Lab in Thailand. It was an intense and rewarding experience. <a href='https://www.bangkokfightlab.com/' target='_blank'>Bangkok Fight Lab</a>"
+  },
+    {
+    "video": "/photos/emu.mp4",
+    "title": "❤️ Emus 🥰",
+    "description": "I'm nearing the end of volunteering for 3 months at an exotic animal shelter in Japan.  I love it, but my visa is up.<br/> Please support <a href='http://animosanctuary.org/' target='_blank'>Animo Sanctuary, Japan</a>"
   }
 ]

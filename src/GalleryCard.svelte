@@ -1,16 +1,38 @@
 <script>
   export let adventure;
   export let index = 0;
+
+  let muted = true;
 </script>
 
-<article class="gallery-item" style={`--delay: ${index * 90}ms`}>
+<article class:has-video={adventure.video} class="gallery-item" style={`--delay: ${index * 90}ms`}>
   <div class="gallery-image">
-    <img src={adventure.image} alt={adventure.title} loading={index === 0 ? 'eager' : 'lazy'} />
+    {#if adventure.video}
+      <video
+        src={adventure.video}
+        autoplay
+        muted={muted}
+        loop
+        playsinline
+        aria-label={adventure.title}
+      ></video>
+      <button
+        class="mute-toggle"
+        type="button"
+        aria-label={muted ? 'Unmute video' : 'Mute video'}
+        title={muted ? 'Unmute video' : 'Mute video'}
+        on:click={() => (muted = !muted)}
+      >
+        {muted ? '🔇' : '🔊'}
+      </button>
+    {:else}
+      <img src={adventure.image} alt={adventure.title} loading={index === 0 ? 'eager' : 'lazy'} />
+    {/if}
     <div class="image-wash"></div>
   </div>
   <div class="gallery-description">
     <h2>{adventure.title}</h2>
-    <p>{adventure.description}</p>
+    <p>{@html adventure.description}</p>
   </div>
 </article>
 
@@ -38,20 +60,61 @@
     overflow: hidden;
   }
 
-  .gallery-image img {
+  .gallery-item.has-video .gallery-image {
+    aspect-ratio: 3 / 5;
+  }
+
+  .gallery-image img,
+  .gallery-image video {
     display: block;
     width: 100%;
     height: auto;
     transition: transform 700ms cubic-bezier(0.2, 0.75, 0.25, 1);
   }
 
-  .gallery-item:hover .gallery-image img { transform: scale(1.06); }
+  .gallery-item.has-video .gallery-image video {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .gallery-item:hover .gallery-image img,
+  .gallery-item:hover .gallery-image video { transform: scale(1.06); }
 
   .image-wash {
     position: absolute;
     inset: 0;
     background: linear-gradient(180deg, rgba(36, 33, 51, 0) 25%, rgba(36, 33, 51, 0.8) 100%);
     opacity: 0.88;
+  }
+
+  .mute-toggle {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    padding: 0;
+    border: 2px solid #fffdf8;
+    border-radius: 50%;
+    background: rgba(36, 33, 51, 0.78);
+    color: #fffdf8;
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    transition: transform 180ms ease, background 180ms ease;
+  }
+
+  .mute-toggle:hover {
+    background: rgba(36, 33, 51, 0.96);
+    transform: scale(1.08);
+  }
+
+  .mute-toggle:focus-visible {
+    outline: 3px solid #ffd166;
+    outline-offset: 3px;
   }
 
   .gallery-description {
@@ -91,7 +154,8 @@
 
   @media (prefers-reduced-motion: reduce) {
     .gallery-item,
-    .gallery-image img {
+    .gallery-image img,
+    .gallery-image video {
       animation-duration: 1ms !important;
       transition-duration: 1ms !important;
     }
