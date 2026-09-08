@@ -40,4 +40,9 @@ export default [
 		title: "🇯🇵 I ❤️ Emus!",
 		description: `I'm nearing the end of volunteering for 3 months at an exotic animal shelter in Japan.  I love it, but my visa is up.<br/><a href='http://animosanctuary.org/' target='_blank'>Animo Sanctuary, Japan</a>`,
 	},
+  {
+		image: "/photos/bungee.jpg",
+		title: "🇳🇵 Bungee!!!",
+		description: `I love pushing my limits and overcoming fear.  I went bungee jumping in Pokhara, Nepal.  It was an exhilarating and I highly recommend it!<br/><a href='https://www.highgroundnepal.com/bungee' target='_blank'>Bungee, Nepal</a>`,
+	},
 ]
