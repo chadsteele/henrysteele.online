@@ -1,5 +1,5 @@
 <script>
-  import adventures from './data/adventures.json';
+  import adventures from './data/adventures.js';
   import GalleryCard from './GalleryCard.svelte';
 </script>
 
