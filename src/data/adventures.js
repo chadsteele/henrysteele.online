@@ -4,6 +4,12 @@ export default [
 		title: "🇲🇺 Giddy up 🇺🇸",
 		description: `I love horses.  I have been riding since I was a child, and I have volunteered with animals in America, Mauritius and now Japan.<br/><a href='https://legaseastables.com/' target='_blank'>Legasea Stables, Mauritius</a>`,
 	},
+  {
+    image: "/photos/skiing.png",
+    title: "🇫🇷 Powder? 🇺🇸",
+    description: `I grew up skiing, boarding and mountain biking in Colorado.  I enjoy exploring new slopes and challenging myself on the mountains.  This photo was in the French Alps.  Dream trip.  
+    <a href='https://www.sosoutreach.org/' target='_blank'>SOS Outreach</a>`,
+  },
 	{
 		image: "/photos/snorkel.jpg",
 		title: "🇲🇺 Eco Volunteer",
@@ -18,14 +24,16 @@ export default [
 
 	{
 		video: "/photos/fightlab.mp4",
-		title: "🇹🇭 Studied Muy Thai and MMA",
+		title: "🇹🇭 Mixed Martial Arts",
 		description: `In July, I trained  at the Bangkok Fight Lab. It was an intense and rewarding experience.<br/><a href='https://www.bangkokfightlab.com/' target='_blank'>Bangkok Fight Lab</a>`,
 	},
 
 	{
 		image: "/photos/thaicooking.jpg",
 		title: "🇹🇭 I'm a foodie",
-		description: `I love this culinary school. Thai food is vibrant and full of flavor. Fresh ingredients, bright colors, and new techniques make me a better cook. <br/><a href='https://www.bangkokthaicookingacademy.com/' target='_blank'>Bangkok Thai Cooking Academy</a>`,
+		description: `I love this culinary school. Thai food is vibrant and full of flavor. Fresh ingredients, bright colors, and new techniques make me a better cook. I'd like to be a chef one day.  Love Sushi too!<br/>
+    
+    <a href='https://www.bangkokthaicookingacademy.com/' target='_blank'>Bangkok Thai Cooking Academy</a>`,
 	},
 	{
 		video: "/photos/emu.mp4",

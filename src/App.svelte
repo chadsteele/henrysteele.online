@@ -12,7 +12,11 @@
   <header class="intro">
     <p class="eyebrow">My gap year and bucket list adventures</p>
     <h1>Hi!  I'm Henry</h1>
-    <p class="intro-copy">I'm looking for my next gig and volunteer opportunity.  I'm spending this year traveling around the world and making a difference with animals, nature, and communities and learning new skills as I go.</p>
+    <div class="intro-copy">
+      <p>I'm looking for my next gig and volunteer opportunity. I'm spending this year traveling around the world, making a difference with animals, nature, and communities, and learning new skills as I go.</p>
+      <p>I graduated high school last spring with a 3.8 GPA. I love to travel, learn, and explore new things. I have a passion for animals, music, nature, and the environment. I also love to cook and play my guitar. I'm looking for opportunities to learn and grow as a person and make a positive impact on the world.</p>
+      <p>Please share this site with anyone you think might be interested in hiring me or offering me a volunteer opportunity. I'm open to anything and everything. I want to learn and grow as a person and make a positive impact on the world. Thank you for your time and consideration.</p>
+    </div>
     <p>
     Let's talk!  
         ✉️  <a href="mailto:henrysogod@gmail.com">Email</a> &nbsp;
