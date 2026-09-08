@@ -32,9 +32,11 @@
       <GalleryCard {adventure} {index} />
     {/each}
   </section>
-   <p>
-    Let's talk!  
-        ✉️  <a href="mailto:henrysogod@gmail.com">Email</a> &nbsp;
-        ☎️  <a href="https://wa.me/+23057464071">WhatsApp</a>
-    </p>
+  <footer class="site-footer">
+  Let's talk! &nbsp;
+   
+     ✉️  <a href="mailto:henrysogod@gmail.com">Email</a> &nbsp; 
+     ☎️  <a href="https://wa.me/+23057464071">WhatsApp</a>
+   
+  </footer>
 </main>
