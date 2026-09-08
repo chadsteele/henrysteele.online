@@ -2,6 +2,8 @@
   export let adventure;
   export let index = 0;
 
+  let muted = true;
+
   $: descriptionLink = adventure.description.match(/<a\b[^>]*href=['"]([^'"]+)['"][^>]*>(.*?)<\/a>/i);
   $: descriptionMarkup = adventure.description.replace(/<a\b[^>]*href=['"][^'"]+['"][^>]*>(.*?)<\/a>/i, '');
 </script>
@@ -12,11 +14,20 @@
       <video
         src={adventure.video}
         autoplay
-        muted
+        muted={muted}
         loop
         playsinline
         aria-label={adventure.title}
       ></video>
+      <button
+        class="mute-toggle"
+        type="button"
+        aria-label={muted ? 'Unmute video' : 'Mute video'}
+        title={muted ? 'Unmute video' : 'Mute video'}
+        onclick={() => (muted = !muted)}
+      >
+        {muted ? '🔇' : '🔊'}
+      </button>
     {:else}
       <img src={adventure.image} alt={adventure.title} loading={index === 0 ? 'eager' : 'lazy'} />
     {/if}
@@ -85,6 +96,36 @@
     inset: 0;
     background: linear-gradient(180deg, rgba(36, 33, 51, 0) 25%, rgba(36, 33, 51, 0.8) 100%);
     opacity: 0.88;
+  }
+
+  .mute-toggle {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    padding: 0;
+    border: 2px solid #fffdf8;
+    border-radius: 50%;
+    background: rgba(36, 33, 51, 0.78);
+    color: #fffdf8;
+    cursor: pointer;
+    font-size: 1.1rem;
+    line-height: 1;
+    transition: transform 180ms ease, background 180ms ease;
+  }
+
+  .mute-toggle:hover {
+    background: rgba(36, 33, 51, 0.96);
+    transform: scale(1.08);
+  }
+
+  .mute-toggle:focus-visible {
+    outline: 3px solid #ffd166;
+    outline-offset: 3px;
   }
 
   .gallery-description {
