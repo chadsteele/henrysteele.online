@@ -45,4 +45,9 @@ export default [
 		title: "🇳🇵 Bungee!!!",
 		description: `I love pushing my limits and overcoming fear.  I went bungee jumping in Pokhara, Nepal.  It was exhilarating and I highly recommend it!<br/><a href='https://www.highgroundnepal.com/bungee' target='_blank'>Bungee, Nepal</a>`,
 	},
+	 {
+		video: "/photos/inlove.mp4",
+		title: "🇯🇵 I can't help...",
+		description: `Only fools rush in, but I can't help falling in love<br/><a href='https://4453.my.canva.site/meows-n-woofs' target='_blank'>Support Meows n Woofs, Chiba, Japan</a>`,
+	},
 ]
