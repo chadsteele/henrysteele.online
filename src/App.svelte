@@ -1,6 +1,44 @@
 <script>
+  import { onMount, tick } from 'svelte';
   import adventures from './data/adventures.js';
   import GalleryCard from './GalleryCard.svelte';
+
+  const toSlugWords = (value) => value
+    .toLocaleLowerCase()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+
+  onMount(async () => {
+    const routeWords = window.location.pathname
+      .split('/')
+      .filter(Boolean)
+      .flatMap((segment) => toSlugWords(decodeURIComponent(segment)));
+
+    if (routeWords.length === 0) return;
+
+    await tick();
+
+    const headings = [...document.querySelectorAll('.gallery-description h2')];
+    const match = headings
+      .map((heading) => {
+        const headingWords = toSlugWords(heading.textContent);
+        const score = routeWords.reduce(
+          (total, routeWord) => total + headingWords.includes(routeWord),
+          0
+        );
+
+        return { heading, score };
+      })
+      .sort((left, right) => right.score - left.score)[0];
+
+    if (match?.score > 0) {
+      match.heading.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
 </script>
 
 <svelte:head>
